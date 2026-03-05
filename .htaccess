@@ -1,0 +1,16 @@
+Options -Indexes
+
+# Protect sensitive files
+<FilesMatch "(composer.json|composer.lock|.env)">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Block hidden files
+RedirectMatch 403 /\..*$
+
+# Protect config files
+<FilesMatch "(Database.php|JWTService.php|AuthMiddleware.php)">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
