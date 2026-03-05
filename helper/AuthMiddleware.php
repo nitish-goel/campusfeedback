@@ -13,21 +13,18 @@ class AuthMiddleware {
             ];
         }
 
-        $token = $_COOKIE['token'];
+        $decoded = JWTService::validate($_COOKIE['token']);
 
-        try {
-            $decoded = JWTService::validate($token);
-
-            return [
-                "status" => true,
-                "user" => $decoded
-            ];
-
-        } catch (Exception $e) {
+        if (!$decoded) {
             return [
                 "status" => false,
                 "message" => "Invalid token"
             ];
         }
+
+        return [
+            "status" => true,
+            "user" => $decoded
+        ];
     }
 }

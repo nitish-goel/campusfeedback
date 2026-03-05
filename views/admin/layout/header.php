@@ -1,16 +1,17 @@
 <?php
+require_once '../../config/bootstrap.php';
 require_once '../../vendor/autoload.php';
 require_once '../../helper/AuthMiddleware.php';
 
 $response = AuthMiddleware::check();
-
-if (!$response['status']) {
+if(!$response['status']){
     header("Location: /CampusFeedback/views/admin/login.php");
     exit;
 }
 
-$user = $response['user'];
-$userdata = $user->data;
+    $user = $response['user'];
+    $userdata = $user->data;
+
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +41,7 @@ $userdata = $user->data;
 
     <div class="ms-auto d-flex align-items-center">
         <span class="me-3 text-muted small">
-            Welcome, <strong><?= htmlspecialchars(ucfirst($userdata->name)); ?></strong>
+            Welcome, <strong><?= htmlspecialchars(ucfirst((isset($userdata->name)?$userdata->name:'Administrater'))); ?></strong>
         </span>
 
         <a href="/CampusFeedback/api/logout.php"

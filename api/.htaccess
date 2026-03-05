@@ -1,0 +1,8 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+# Block direct access to API via browser
+RewriteCond %{REQUEST_METHOD} !POST
+RewriteRule ^(create_form|add_field|delete_field|update_field)\.php$ - [F]

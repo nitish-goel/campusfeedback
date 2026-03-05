@@ -6,20 +6,19 @@ use Firebase\JWT\Key;
 
 class JWTService {
 
-    private static function getSecret() {
-        $JWT_secret = '_need_some_caffine__32_chars!!!!!';
-                       
-        // return $_ENV['JWT_SECRET']; // from .env
-        return $JWT_secret; // from .env
+    private static function getSecret() {                       
+        $JWT_secret = $_ENV['JWT_SECRET']; // from .env
+        return $JWT_secret; 
     }
     public static function generate($user) {
 
         $payload = [
             "iss" => "CampusFeedback",
             "iat" => time(),
-            "exp" => time() + 3600,
+            "exp" => time() + 30,
             "data" => [
                 "id" => $user['id'],
+                "role" => 'admin_id',
                 "name" => $user['username']
             ]
         ];
