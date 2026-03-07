@@ -1,3 +1,4 @@
+<?php date_default_timezone_set('Asia/Kolkata'); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -123,7 +124,7 @@ fetch("../../api/get_forms.php?id=" + formId)
         form.innerHTML += `
             <div class="form-group">
             <label class="form-label">University Roll Number</label>
-            <input type="text" 
+            <input type="number" 
                 name="roll_number" 
                 class="form-control" 
                 placeholder="Enter your roll number"

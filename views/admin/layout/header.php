@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('Asia/Kolkata');
 require_once '../../config/bootstrap.php';
 require_once '../../vendor/autoload.php';
 require_once '../../helper/AuthMiddleware.php';
@@ -41,7 +42,7 @@ if(!$response['status']){
 
     <div class="ms-auto d-flex align-items-center">
         <span class="me-3 text-muted small">
-            Welcome, <strong><?= htmlspecialchars(ucfirst((isset($userdata->name)?$userdata->name:'Administrater'))); ?></strong>
+            Welcome, <strong><?= htmlspecialchars(ucfirst($userdata->name)); ?></strong>
         </span>
 
         <a href="/CampusFeedback/api/logout.php"
