@@ -18,7 +18,7 @@ class JWTService {
         $role = $user['role'] ?? 'admin';
 
         $payload = [
-            "iss" => "CampusFeedback",
+            "iss" => "CampusCall",
             "iat" => time(),
             "exp" => time() + 900,
             "data" => [

@@ -1,12 +1,12 @@
 <?php
 date_default_timezone_set('Asia/Kolkata');
-require_once '../../config/bootstrap.php';
-require_once '../../vendor/autoload.php';
-require_once '../../helper/AuthMiddleware.php';
+require_once __DIR__ .'/../../../config/bootstrap.php';
+require_once __DIR__ .'/../../../vendor/autoload.php';
+require_once __DIR__ .'/../../../helper/AuthMiddleware.php';
 
 $response = AuthMiddleware::check();
 if(!$response['status']){
-    header("Location: /CampusFeedback/views/admin/login.php");
+    header("Location: ".$_ENV['APP_URL']."/views/admin/login.php");
     exit;
 }
 
@@ -20,7 +20,7 @@ if(!$response['status']){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin | CampusFeedback</title>
+    <title>Admin | CampusCall</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@ if(!$response['status']){
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="/CampusFeedback/assets/css/style.css">
+    <link rel="stylesheet" href= "<?= $_ENV['APP_URL']; ?>/assets/css/style.css">
 </head>
 
 <body class="bg-light">
@@ -36,8 +36,8 @@ if(!$response['status']){
 <!-- Top Navbar -->
 <nav class="navbar navbar-expand navbar-light bg-white shadow-sm px-4">
     <a class="navbar-brand fw-bold text-primary"
-       href="/CampusFeedback/views/admin/dashboard.php">
-        🎓 CampusFeedback
+       href="<?= $_ENV['APP_URL']; ?>/views/admin/dashboard.php">
+        🎓 CampusCall
     </a>
 
     <div class="ms-auto d-flex align-items-center">
@@ -45,7 +45,7 @@ if(!$response['status']){
             Welcome, <strong><?= htmlspecialchars(ucfirst($userdata->name)); ?></strong>
         </span>
 
-        <a href="/CampusFeedback/api/logout.php"
+        <a href="<?= $_ENV['APP_URL']; ?>/api/logout.php"
            class="btn btn-sm btn-outline-danger">
             <i class="bi bi-box-arrow-right"></i> Logout
         </a>

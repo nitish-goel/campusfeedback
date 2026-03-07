@@ -1,7 +1,8 @@
+<?php require_once __DIR__ . '/../../../config/bootstrap.php'; ?>
 <!-- <div class="col-md-3 col-lg-2 d-md-block bg-white sidebar shadow-sm min-vh-100 p-0">
 
     <div class="p-4 border-bottom text-center">
-        <h5 class="fw-bold mb-0">CampusFeedback</h5>
+        <h5 class="fw-bold mb-0">CampusCall</h5>
         <small class="text-muted">Admin Panel</small>
     </div>
 
@@ -9,7 +10,7 @@
 
         <li class="nav-item mb-2">
             <a class="nav-link d-flex align-items-center rounded px-3 py-2"
-               href="/CampusFeedback/views/admin/dashboard.php">
+               href="<?= $_ENV['APP_URL']; ?>/views/admin/dashboard.php">
                 <span class="me-2">📊</span>
                 <span>Dashboard</span>
             </a>
@@ -17,7 +18,7 @@
 
         <li class="nav-item mb-2">
             <a class="nav-link d-flex align-items-center rounded px-3 py-2"
-               href="/CampusFeedback/views/admin/manage_forms.php">
+               href="<?= $_ENV['APP_URL']; ?>/views/admin/manage_forms.php">
                 <span class="me-2">📝</span>
                 <span>Manage Forms</span>
             </a>
@@ -25,7 +26,7 @@
 
         <li class="nav-item mb-2">
             <a class="nav-link d-flex align-items-center rounded px-3 py-2"
-               href="CampusFeedback/views/admin/submissions.php">
+               href="CampusCall/views/admin/submissions.php">
                 <span class="me-2">📂</span>
                 <span>Submissions</span>
             </a>
@@ -43,7 +44,7 @@
 
         <li class="nav-item">
             <a class="nav-link d-flex align-items-center text-danger rounded px-3 py-2"
-               href="/CampusFeedback/api/logout.php">
+               href="<?= $_ENV['APP_URL']; ?>/api/logout.php">
                 <span class="me-2">🚪</span>
                 <span>Logout</span>
             </a>
@@ -63,7 +64,7 @@
 
         <li class="nav-item mb-2 w-100">
             <a class="nav-link d-flex align-items-center"
-               href="/CampusFeedback/views/admin/dashboard.php">
+               href="<?= $_ENV['APP_URL']; ?>/views/admin/dashboard.php">
                 <i class="bi bi-speedometer2 me-2"></i>
                 Dashboard
             </a>
@@ -71,7 +72,7 @@
 
         <li class="nav-item mb-2 w-100">
             <a class="nav-link d-flex align-items-center"
-               href="/CampusFeedback/views/admin/manage_forms.php">
+               href="<?= $_ENV['APP_URL']; ?>/views/admin/manage_forms.php">
                 <i class="bi bi-ui-checks me-2"></i>
                 Manage Forms
             </a>
@@ -79,7 +80,7 @@
 
         <li class="nav-item mb-2 w-100">
             <a class="nav-link d-flex align-items-center"
-               href="/CampusFeedback/views/admin/submissions.php">
+               href="<?= $_ENV['APP_URL']; ?>/views/admin/submissions.php">
                 <i class="bi bi-folder2-open me-2"></i>
                 Submissions
             </a>
@@ -87,7 +88,7 @@
 
         <!-- <li class="nav-item mb-2 w-100">
             <a class="nav-link d-flex align-items-center"
-               href="/CampusFeedback/views/admin/users.php">
+               href="<?= $_ENV['APP_URL']; ?>/views/admin/users.php">
                 <i class="bi bi-people me-2"></i>
                 Users
             </a>

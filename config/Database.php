@@ -1,9 +1,8 @@
 <?php
 date_default_timezone_set('Asia/Kolkata');
 require_once __DIR__ . '/../vendor/autoload.php';
+require_once 'bootstrap.php';
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
-$dotenv->load();
 class Database {
 
     private static $instance = null;

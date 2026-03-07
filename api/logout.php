@@ -1,5 +1,5 @@
 <?php
-
+require_once '../config/bootstrap.php';
 // Destroy JWT cookie
 setcookie("token", "", [
     "expires" => time() - 3600,
@@ -14,5 +14,5 @@ session_unset();
 session_destroy();
 
 // Redirect to login page
-header("Location: /CampusFeedback/views/admin/login.php");
+header("Location: ".$_ENV['APP_URL']."/views/admin/login.php");
 exit;

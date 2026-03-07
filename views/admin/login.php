@@ -1,4 +1,4 @@
-
+<?php require_once '../../config/bootstrap.php';  ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,11 +35,11 @@
         
       <form  method="post" id="loginForm">
         <div class="form-group">
-            <input type="text" placeholder="Enter username" name="username" class="form-control">
+            <input type="text" placeholder="Enter username" name="username" class="form-control" required>
             <i class="fa-solid fa-user"></i>
         </div>
         <div class="form-group">
-            <input id="password-field" type="password" class="form-control" name="password" placeholder="Enter Password">
+            <input id="password-field" type="password" class="form-control" name="password" placeholder="Enter Password" required>
             <i toggle="#password-field" class="fa-regular fa-eye-slash field-icon toggle-password"></i>
         </div>
         <div class="form-btn">
@@ -76,12 +76,13 @@
     });
 </script>
 <script>
+const APP_URL = "<?php echo $_ENV['APP_URL']; ?>";
 document.getElementById("loginForm").addEventListener("submit", async function(e){
     e.preventDefault();
 
     const formData = new FormData(this);
 
-    const response = await fetch("/CampusFeedback/api/login.php", {
+    const response = await fetch(APP_URL + "/api/login.php", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -95,7 +96,7 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
     const data = await response.json();
 
     if(data.status){
-        window.location.href = "/CampusFeedback/views/admin/dashboard.php";
+        window.location.href = APP_URL + "/views/admin/dashboard.php";
         showToast(data.message, "success");
 
     } else {

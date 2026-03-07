@@ -1,4 +1,4 @@
-# 🎓 CampusFeedback
+# 🎓 CampusCall
 
 A Dynamic Feedback Management System built using **Core PHP, MySQL, JWT
 Authentication, and Bootstrap 5**.
@@ -45,7 +45,7 @@ submit responses to the currently active form.
 
 ## 📂 Project Structure
 
-CampusFeedback/ 
+CampusCall/ 
 │ 
 ├── config/ 
 │   └── Database.php 
@@ -114,7 +114,7 @@ CampusFeedback/
 
 ### 1. Clone Repository
 
-git clone https://github.com/yourusername/CampusFeedback.git
+git clone https://github.com/yourusername/CampusCall.git
 
 ### 2. Install Dependencies
 
@@ -138,7 +138,7 @@ htdocs/ (for XAMPP)
 
 Open in browser:
 
-http://localhost/CampusFeedback/views/admin/login.php
+http://localhost/CampusCall/views/admin/login.php
 
 ------------------------------------------------------------------------
 

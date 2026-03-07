@@ -1,4 +1,6 @@
-<?php date_default_timezone_set('Asia/Kolkata'); ?>
+<?php date_default_timezone_set('Asia/Kolkata');
+require_once __DIR__ . '/../../config/bootstrap.php';
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campus Feedback Form</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="/CampusFeedback/assets/css/style.css">
+    <link rel="stylesheet" href="<?= $_ENV['APP_URL']; ?>/assets/css/style.css">
 </head>
 
 <body class="bg-light">
