@@ -88,37 +88,39 @@ Each field includes:
 ------------------------------------------------------------------------
 
 ## 📂 Project Structure
-
+```
 CampusCall/
-    │
-    ├── config/ 
-    │   ├── Database.php
-    │   └── boostrap.php
-    │ 
-    ├── api/ 
-    │   ├── login.php 
-    │   ├── create_form.php 
-    │   ├── add_field.php 
-    │   ├──get_forms.php 
-    │   ├── get_fields.php 
-    │   ├── update_field.php 
-    │   ├──delete_field.php 
-    │   ├── set_active_form.php 
-    │   └── submit.php
-    │
-    ├── helper/ 
-    │   ├── AuthMiddleware.php 
-    │   └── JWTService.php
-    │
-    ├── views/ 
-    │   ├── admin/ 
-    │   └── site/
-    │
-    ├── assets/ 
-    │   └── css/
-    │
-    ├── vendor/ 
-    └── composer.json
+│
+├── config/ 
+│   ├── Database.php
+│   └── boostrap.php
+│ 
+├── api/ 
+│   ├── login.php 
+│   ├── create_form.php 
+│   ├── add_field.php 
+│   ├──get_forms.php 
+│   ├── get_fields.php 
+│   ├── update_field.php 
+│   ├──delete_field.php 
+│   ├── set_active_form.php 
+│   └── submit.php
+│
+├── helper/ 
+│   ├── AuthMiddleware.php 
+│   └── JWTService.php
+│
+├── views/ 
+│   ├── admin/ 
+│   └── site/
+│
+├── assets/ 
+│   └── css/
+│
+├── vendor/ 
+│
+└── composer.json
+```
 
 ------------------------------------------------------------------------
 
