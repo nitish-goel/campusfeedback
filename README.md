@@ -1,10 +1,11 @@
-# 🎓 CampusCall
+# 🎓 CampusCall -- Dynamic Feedback Form Builder
 
-A Dynamic Feedback Management System built using **Core PHP, MySQL, JWT
-Authentication, and Bootstrap 5**.
+A Dynamic Feedback Management System and PHP Form Builder built using
+**Core PHP, MySQL, JWT Authentication, and Bootstrap 5**.
 
-This system allows admins to create feedback forms and students to
-submit responses to the currently active form.
+CampusCall allows administrators to create dynamic feedback forms
+without writing code and enables students to submit feedback to the
+currently active form.
 
 ------------------------------------------------------------------------
 
@@ -33,6 +34,49 @@ submit responses to the currently active form.
 
 ------------------------------------------------------------------------
 
+## 🧩 Dynamic PHP Form Builder
+
+CampusCall includes a **dynamic form builder** that allows
+administrators to create feedback forms **without writing any code**.
+
+The system stores form structure in the database and renders forms
+dynamically on the frontend.
+
+### ✨ Capabilities
+
+-   Create unlimited forms
+-   Add multiple field types dynamically
+-   Manage fields through admin panel
+-   Store form structure in database
+-   Render forms automatically on the student side
+-   Submit responses dynamically
+
+### 🧱 Supported Field Types
+
+-   Text Input
+-   Textarea
+-   Radio Buttons
+-   Checkbox Group
+
+Each field includes:
+
+-   Custom label
+-   Multiple options (for radio/checkbox)
+-   Form association
+-   Dynamic rendering
+
+### ⚙ How the Form Builder Works
+
+1.  Admin creates a form
+2.  Admin adds fields dynamically
+3.  Field configuration is stored in the **fields table**
+4.  The system fetches the fields using API
+5.  PHP renders the form dynamically on the student side
+6.  Student submits the form
+7.  Responses are stored in the **submissions** table
+
+------------------------------------------------------------------------
+
 ## 🛠 Tech Stack
 
 -   PHP (Core PHP, OOP)
@@ -45,35 +89,36 @@ submit responses to the currently active form.
 
 ## 📂 Project Structure
 
-CampusCall/ 
-│ 
-├── config/ 
-│   └── Database.php 
-│ 
-├── api/ 
-│   ├──login.php 
-│   ├── create_form.php 
-│   ├── add_field.php 
-│   ├── get_forms.php
-│   ├── get_fields.php 
-│   ├── update_field.php 
-│   ├── delete_field.php 
-│   ├── set_active_form.php 
-│   └── submit.php 
-│   
-├── helper/ 
-│   ├──AuthMiddleware.php 
-│   └── JWTService.php 
-│
-├── views/ 
-│   ├── admin/
-│   └──site/ 
-│
-├── assets/ 
-│   └── css/ 
-│
-├── vendor/ 
-└── composer.json
+CampusCall/
+    │
+    ├── config/ 
+    │   ├── Database.php
+    │   └── boostrap.php
+    │ 
+    ├── api/ 
+    │   ├── login.php 
+    │   ├── create_form.php 
+    │   ├── add_field.php 
+    │   ├──get_forms.php 
+    │   ├── get_fields.php 
+    │   ├── update_field.php 
+    │   ├──delete_field.php 
+    │   ├── set_active_form.php 
+    │   └── submit.php
+    │
+    ├── helper/ 
+    │   ├── AuthMiddleware.php 
+    │   └── JWTService.php
+    │
+    ├── views/ 
+    │   ├── admin/ 
+    │   └── site/
+    │
+    ├── assets/ 
+    │   └── css/
+    │
+    ├── vendor/ 
+    └── composer.json
 
 ------------------------------------------------------------------------
 
@@ -99,14 +144,10 @@ CampusCall/
 
 -   id
 -   form_id
--   submitted_at
-
-### submission_answers
-
--   id
--   submission_id
 -   field_id
 -   answer
+-   roll_number
+-   submitted_at
 
 ------------------------------------------------------------------------
 
@@ -114,7 +155,7 @@ CampusCall/
 
 ### 1. Clone Repository
 
-git clone https://github.com/yourusername/CampusCall.git
+git clone https://github.com/nitish-goel/CampusCall.git
 
 ### 2. Install Dependencies
 
@@ -153,11 +194,11 @@ http://localhost/CampusCall/views/admin/login.php
 
 ## 🎯 How It Works
 
-1.  Admin creates form\
-2.  Admin adds fields\
-3.  Admin sets one form as active\
-4.  Student opens form page\
-5.  Student submits feedback\
+1.  Admin creates form
+2.  Admin adds fields
+3.  Admin sets one form as active
+4.  Student opens form page
+5.  Student submits feedback
 6.  Data stored in database
 
 ------------------------------------------------------------------------
