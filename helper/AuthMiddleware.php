@@ -1,5 +1,5 @@
 <?php
-
+require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/JWTService.php';
 
 class AuthMiddleware {
@@ -21,11 +21,12 @@ class AuthMiddleware {
                 "message" => "Invalid token"
             ];
         }
+       
         /* Refresh token automatically */
         $newToken = JWTService::generate([
             "id"=>$decoded->data->id,
-            "role" => 'admin_id',
-            "name"=>$decoded->data->name
+            "username"=> $decoded->data->username,
+            "role" => 'admin',
             ]);
             
         setcookie("token",$newToken,[

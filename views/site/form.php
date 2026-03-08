@@ -8,6 +8,7 @@ require_once __DIR__ . '/../../config/bootstrap.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campus Feedback Form</title>
+    <link rel="shortcut icon" href="<?= $_ENV['APP_URL']?>/assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="<?= $_ENV['APP_URL']; ?>/assets/css/style.css">
 </head>
@@ -26,9 +27,9 @@ require_once __DIR__ . '/../../config/bootstrap.php';
                         <p id="formDescription" class="text-muted mb-0"></p>
                     </div>
 
-                    <div class="alert alert-info text-center small">
+                    <!-- <div class="alert alert-info text-center small">
                         Your responses are anonymous.
-                    </div>
+                    </div> -->
 
                     <form id="studentForm"></form>
 

@@ -11,11 +11,10 @@ class JWTService {
         return $JWT_secret; 
     }
     public static function generate($user) {
-        // print_r($user);
-        // die;
-        $id   = $user['id'] ?? null;
-        $name = $user['username'] ?? 'Administrator';
-        $role = $user['role'] ?? 'admin';
+       
+        $id   = $user['id'];
+        $username = $user['username'];
+        $role = 'admin';
 
         $payload = [
             "iss" => "CampusCall",
@@ -23,8 +22,8 @@ class JWTService {
             "exp" => time() + 900,
             "data" => [
                 "id" => $id,
+                "username" => $username,    
                 "role" => $role,
-                "name" => $name,    
             ]
         ];
 

@@ -20,6 +20,7 @@ if(!$response['status']){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="<?= $_ENV['APP_URL']?>/assets/favicon.ico" type="image/x-icon">
     <title>Admin | CampusCall</title>
 
     <!-- Bootstrap -->
@@ -42,7 +43,7 @@ if(!$response['status']){
 
     <div class="ms-auto d-flex align-items-center">
         <span class="me-3 text-muted small">
-            Welcome, <strong><?= htmlspecialchars(ucfirst($userdata->name)); ?></strong>
+            Welcome, <strong><?= htmlspecialchars(ucfirst($userdata->username)); ?></strong>
         </span>
 
         <a href="<?= $_ENV['APP_URL']; ?>/api/logout.php"
